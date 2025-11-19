@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import './styles/App.css';
 import ImageFetcher from './utils/ImageFetcher.jsx';
-import DisplayCards from './utils/DisplayCards.jsx'
+import GameArea from './components/GameArea.jsx';
 function App() {
-    const { imageData } = ImageFetcher("dog");
+    
+    const { imageData } = ImageFetcher("plants");
 
     // Data is not loaded yet
     if (!imageData || imageData.length === 0) {
@@ -12,9 +13,7 @@ function App() {
   
     // When loaded, use the first image
     return (
-      <DisplayCards
-        imageData={imageData}
-      />
+        <GameArea imageData={imageData}/>
     );
   }
 

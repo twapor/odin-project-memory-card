@@ -1,9 +1,16 @@
-export default function GameArea () {
+import DisplayCards from "../utils/DisplayCards";
+import ScoreBoard from "./ScoreBoard";
+import GameControls from "./GameControls";
+
+
+export default function GameArea ({currentScore, bestScore, imageData, onClickReset, onClickSearch}) {
     return (
-        <div className="App">
-        <GameControls />;
-        <ScoreBoard />;
-        <PlayArea />;
+        <div className="app">
+        <div className="controls">
+        <ScoreBoard currentScore={currentScore} bestScore={bestScore}/>
+        <GameControls onClickReset={onClickReset} onClickSearch={onClickReset}/>
+        </div>
+        <DisplayCards imageData={imageData}/>
         </div>
     );
 }
