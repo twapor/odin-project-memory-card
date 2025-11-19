@@ -1,20 +1,8 @@
 import { useEffect, useState } from 'react';
 import './styles/App.css';
-
+import ImageFetcher from './utils/ImageFetcher.jsx';
 function App() {
-  const [counter, setCounter] = useState(0);
-
-  useEffect(() => {
-    const key = setInterval(() => {
-      setCounter((count) => count + 1);
-    }, 1000);
-
-    return () => {
-      clearInterval(key);
-    };
-  }, []);
-
-  return <p>{counter} seconds have passed.</p>;
+  ImageFetcher("dog");
 }
 
 export default App;
