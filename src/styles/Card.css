@@ -1,0 +1,11 @@
+.memory-card{
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-image {
+    width: 180px;
+}
