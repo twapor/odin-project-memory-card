@@ -1,0 +1,17 @@
+.app {
+  display: flex;
+  margin: auto;
+  width: 100%;
+  padding: 32px 24px;
+  gap: 24px;
+  max-width: 1500px;
+}
+
+.edit-side {
+  display: flex;
+  height: fit-content;
+  flex-wrap: wrap;
+  gap: 24px;
+  max-width: 750px;
+  flex-grow: 1;
+}
