@@ -1,11 +1,21 @@
 import { useEffect, useState } from 'react';
 import './styles/App.css';
 import ImageFetcher from './utils/ImageFetcher.jsx';
-import Card from './components/Card.jsx'
+import DisplayCards from './utils/DisplayCards.jsx'
 function App() {
-  ImageFetcher("dog");
+    const { imageData } = ImageFetcher("dog");
+
+    // Data is not loaded yet
+    if (!imageData || imageData.length === 0) {
+      return <p>Loading...</p>;
+    }
   
-  return <Card imageUrl="https://images.unsplash.com/photo-1453227588063-bb302b62f50b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MzI2MTR8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjM1NDI2MzB8&ixlib=rb-4.1.0&q=80&w=400" title='Cute Dog'/>
-}
+    // When loaded, use the first image
+    return (
+      <DisplayCards
+        imageData={imageData}
+      />
+    );
+  }
 
 export default App;
