@@ -1,18 +1,22 @@
-import Card from '../components/Card.jsx'
+import Card from "../components/Card.jsx";
 
-export default function DisplayCards ({ imageData, onMemoryCardClick }) {
+export default function DisplayCards({ imageData, order, onMemoryCardClick }) {
+  return (
+    <div className="cards-holder">
+      {order.map(id => {
+        const img = imageData.find(item => item.id === id);
 
-    return (
-        <div className="cards-holder">
-             {imageData.map((img) => (
-        <Card 
-          key={img.id || img.urls.regular} 
-          imageUrl={img.urls.small}
-          id={img.id}
-          altText={img.alt_description || "Random Photo"}
-          onMemoryCardClick={() => onMemoryCardClick(img.id)}
-        />
-      ))}
-        </div>
-    )
+        if (!img) return null;
+
+        return (
+          <Card 
+            key={img.id}
+            imageUrl={img.urls.small}
+            altText={img.alt_description || "Random Photo"}
+            onMemoryCardClick={() => onMemoryCardClick(img.id)}
+          />
+        );
+      })}
+    </div>
+  );
 }
