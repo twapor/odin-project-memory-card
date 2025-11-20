@@ -1,4 +1,7 @@
+import { useState } from "react"
+
 export default function ScoreBoard ({bestScore, currentScore}) {
+    
     return (
         <div className="scoreboard">
             <h3>Best Score: {bestScore}</h3>

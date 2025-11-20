@@ -8,7 +8,7 @@ export default function GameArea ({currentScore, bestScore, imageData, onClickRe
         <div className="app">
         <div className="controls">
         <ScoreBoard currentScore={currentScore} bestScore={bestScore}/>
-        <GameControls onClickReset={onClickReset} onClickSearch={onClickReset}/>
+        <GameControls onClickReset={onClickReset} onClickSearch={onClickSearch}/>
         </div>
         <DisplayCards imageData={imageData}/>
         </div>

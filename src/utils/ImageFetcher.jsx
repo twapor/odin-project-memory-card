@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 export default function ImageFetcher(searchQuery) {
   const [imageData, setImageData] = useState([]);
-  const accessKey = /*API key Here*/;
+  const accessKey = 'dR3apHhkaEi8ZjeBrH-fAlYoJeRQLjCisdZCFNcVDOg';
   useEffect(()=> {
     if (!searchQuery) return;
     const fetchImage = async () => {
